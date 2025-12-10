@@ -8,7 +8,7 @@ The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, whi
 
 ```python
 from google.colab import drive
-drive.mount('/content/drive')```
+drive.mount('/content/drive')
 ```
 Pandas is imported, and a DataFrame is created:
 
