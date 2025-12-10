@@ -28,16 +28,16 @@ The dataset contains student information including:
 3. Analysing distributions – explore patterns 📊  
 4. Creating visualisations 📈
 
-### 🧐 Inspecting the data
+### 🧐  Inspecting the data
 Here you can describe what you did, e.g., used df.info() to check column types and missing values.
 
-### 🧹 Cleaning missing values
+### 🧹  Cleaning missing values
 Explain how you handled NaN values, corrected inconsistent entries, etc.
 
-### 📊 Analysing distributions
+### 📊  Analysing distributions
 Describe any patterns you explored, e.g., value counts or group averages.
 
-### 📈 Creating visualisations
+### 📈  Creating visualisations
 List the charts you created and what insights they show.
 
 
