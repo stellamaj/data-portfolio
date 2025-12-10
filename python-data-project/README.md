@@ -28,7 +28,7 @@ The dataset contains student information including:
 3. Analysing distributions – explore patterns 📊  
 4. Creating visualisations 📈
 
-### 🧐 U+202F Inspecting the data
+### 🧐  Inspecting the data
 Here you can describe what you did, e.g., used df.info() to check column types and missing values.
 
 ### 🧹  Cleaning missing values
