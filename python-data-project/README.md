@@ -10,11 +10,11 @@ The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, whi
 from google.colab import drive
 drive.mount('/content/drive')
 ```
+
 Pandas is imported, and a DataFrame is created:
 
 ```python
 import pandas as pd
-
 df = pd.read_csv("/content/drive/MyDrive/student.csv")
 ```
 
