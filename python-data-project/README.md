@@ -4,13 +4,6 @@
 This repository showcases my data analysis projects using Python and Pandas. It includes data inspection, cleaning, analysis, and visualisation tasks.
 
 ## Dataset
-The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, which is used for coding. Then Pandas has been import and DataFrame created:
-
-import pandas as pd
-
-df = pd.read_csv("/content/drive/MyDrive/student.csv")
-
-## Dataset
 The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, which is used for coding. 
 
 Pandas is imported, and a DataFrame is created:
