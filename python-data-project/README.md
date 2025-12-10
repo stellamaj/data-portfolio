@@ -14,4 +14,22 @@ The dataset contains student information including:
 - Mark
 - Gender
 
+## Analysis Steps
+1. Inspecting the data – understand the dataset, check columns, types, and missing values
+2. Cleaning missing values – handle missing data and fix errors
+3. Analysing distributions – explore patterns
+4. Creating visualisations
+
+
+
+
+
+
+
+
+## Results
+Short summary of insights or outputs, e.g., charts, top students, trends.
+
+## How to Run
+Instructions to open the Jupyter Notebook and reproduce the analysis.
 
