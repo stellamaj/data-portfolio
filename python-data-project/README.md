@@ -6,9 +6,10 @@ This repository showcases my data analysis projects using Python and Pandas. It 
 ## Dataset
 The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, which is used for coding.
 
-```from google.colab import drive
+```python
+from google.colab import drive
 drive.mount('/content/drive')```
-
+```
 Pandas is imported, and a DataFrame is created:
 
 ```python
