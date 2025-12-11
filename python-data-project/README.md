@@ -178,7 +178,16 @@ Output:
 33  34     Gain Toe  Seven    69    male
 34  35   Rows Noump    Six    88  female
 ```
+To confirm that there are no NaN values in the DataFrame, `df.isnull().sum().sum()` is used.
 
+```python
+df.isnull().sum().sum()
+```
+Output:
+```
+np.int64(0)
+```
+From the output `0`, we know there are no `NaN` values in the DataFrame, so it is ready for analysis.
 
 
 
