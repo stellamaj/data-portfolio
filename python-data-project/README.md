@@ -120,7 +120,20 @@ dtype: int64
 
 
 ### 🧹  Cleaning missing values
-Explain how you handled NaN values, corrected inconsistent entries, etc.
+Firstly, a new DataFrame was created with rows containing NaN values so that students can be identified and contacted to complete the information.
+
+```python
+df_missing = df[df.isnull().values.any(axis=1)]
+print(df_missing)
+```
+
+Output:
+```
+    id      name  class  mark gender
+8    9   Tes Qry    Six    78    NaN
+14  15  Tade Row    NaN    88   male
+26  27       NaN  Three    81    NaN
+```
 
 ### 📊  Analysing distributions
 Describe any patterns you explored, e.g., value counts or group averages.
