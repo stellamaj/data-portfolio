@@ -204,9 +204,7 @@ male	16
 
 dtype: int64
 ```
-The distribution shows there are an equal number of female and male students (16 each).
-
-> This text has a vertical line on the left
+>The distribution shows there are an equal number of female and male students (16 each).
 
 Average mark by gender:
 
