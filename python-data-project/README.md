@@ -54,7 +54,7 @@ Data columns (total 5 columns):
 dtypes: int64(2), object(3)
 memory usage: 1.5+ KB
 ```
-From the `info()` output, there are 35 total entries. However, the columns `name` and `class` each show 34 non-null values, which means they contain 1 missing value each. The `gender` column has 33 non-null values, so it contains 2 missing values.
+>From the `info()` output, there are 35 total entries. However, the columns `name` and `class` each show 34 non-null values, which means they contain 1 missing value each. The `gender` column has 33 non-null values, so it contains 2 missing values.
 
 To view the rows with `NaN` values, the DataFrame can be displayed using `df` in Jupyter Notebook for a rich view, or printed with `print(df)`:
 
@@ -97,7 +97,7 @@ Output from print(df):
 32  33    Kenn Rein    Six    96  female
 33  34     Gain Toe  Seven    69    male
 ```
-The data contains some missing values, indicated by NaN.
+>The data contains some missing values, indicated by NaN.
 
 To check how many NaN values are in each column, `df.isnull().sum()` is used.
 
@@ -186,7 +186,7 @@ Output:
 ```
 np.int64(0)
 ```
-From the output `0`, we know there are no `NaN` values in the DataFrame, so it is ready for analysis.
+>From the output `0`, we know there are no `NaN` values in the DataFrame, so it is ready for analysis.
 
 ### 📊  Analysing
 
@@ -212,8 +212,7 @@ df.groupby('gender')['mark'].mean()
 ```
 Output:
 ```
-
-mark
+		mark
 gender	
 female	77.3125
 male	70.5625
