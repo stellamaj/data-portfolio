@@ -262,7 +262,32 @@ df['class'] = df['class'].replace({
     'Ninth': 'Nine'
 })
 ```
+Average mark by class and gender (ordered from Three to Nine)
 
+```python
+class_order = ['Three','Four','Five','Six','Seven','Eight','Nine']
+df['class'] = pd.Categorical(df['class'], categories=class_order, ordered=True)
+
+df.groupby(['class','gender'], observed=True)['mark'].mean().round(0).astype(int)
+```
+Output:
+```
+		mark
+class	gender	
+Three	male	70
+Four	female	64
+male	77
+Five	male	80
+Six	female	89
+male	54
+Seven	female	81
+male	74
+Eight	male	79
+Nine	female	65
+male	18
+
+dtype: int64
+```
 
 
 
