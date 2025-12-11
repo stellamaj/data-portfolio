@@ -276,19 +276,70 @@ Output:
 class	gender	
 Three	male	70
 Four	female	64
-male	77
+		male	77
 Five	male	80
-Six	female	89
-male	54
+Six		female	89
+		male	54
 Seven	female	81
-male	74
+		male	74
 Eight	male	79
 Nine	female	65
-male	18
+		male	18
 
 dtype: int64
 ```
 >From the output, the comparison of marks by class and gender is not very meaningful because the distribution of genders across classes is uneven, and some classes do not contain any female students at all.
+
+Creating a new DataFrame for deeper analysis to identify high-achieving students
+
+```python
+top_students = df[df['mark'] > 80]
+top_students
+```
+
+Output:
+```
+
+	id	name		class	mark	gender
+1	2	Max Ruin	Three	85		male
+7	8	Asruid		Five	85		male
+10	11	Ronald		Six		89		female
+11	12	Recky		Six		94		female
+12	13	Kty			Seven	88		female
+13	14	Bigy		Seven	88		female
+15	16	Gimmy		Four	88		male
+24	25	Giff Tow	Seven	88		male
+27	28	Rojj Base	Seven	86		female
+30	31	Marry Toeey	Four	88		male
+31	32	Binn Rott	Seven	90		female
+32	33	Kenn Rein	Six		96		female
+34	35	Rows Noump	Six		88		female
+```
+
+Number of top-performing students at the university
+
+```python
+print(f"Number of top students: {len(top_students)}")
+```
+Output:
+```
+Number of top students: 13
+```
+
+Number of top-performing students by gender
+
+```python
+top_by_gender = top_students.groupby('gender').size()
+print(top_by_gender)
+```
+```
+Output:
+gender
+female    8
+male      5
+dtype: int64
+```
+Conclusion
 
 
 
