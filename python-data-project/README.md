@@ -339,22 +339,9 @@ female    8
 male      5
 dtype: int64
 ```
-Conclusion
-
-
-
-
-
-
-
-
 
 ### 📈  Creating visualisations
 List the charts you created and what insights they show.
-
-
-
-
 
 
 ## Results
