@@ -33,7 +33,28 @@ The dataset contains student information including:
 4. Creating visualisations 📈
 
 ### 🧐  Inspecting the data
-Here you can describe what you did, e.g., used df.info() to check column types and missing values.
+To understand the dataset, info() was used to review its structure, and the data was displayed as a DataFrame.
+
+```python
+df.info()
+```
+Output:
+
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 35 entries, 0 to 34
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   id      35 non-null     int64 
+ 1   name    34 non-null     object
+ 2   class   34 non-null     object
+ 3   mark    35 non-null     int64 
+ 4   gender  33 non-null     object
+dtypes: int64(2), object(3)
+memory usage: 1.5+ KB
+```
+
 
 ### 🧹  Cleaning missing values
 Explain how you handled NaN values, corrected inconsistent entries, etc.
