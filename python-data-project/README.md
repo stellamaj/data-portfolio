@@ -207,6 +207,19 @@ dtype: int64
 >The distribution shows there are an equal number of female and male students (16 each).
 
 Average mark by gender:
+```python
+df.groupby('gender')['mark'].mean()
+```
+Output:
+```
+
+mark
+gender	
+female	77.3125
+male	70.5625
+
+dtype: float64
+```
 
 
 
