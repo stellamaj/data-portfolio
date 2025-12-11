@@ -97,6 +97,27 @@ Output from print(df):
 32  33    Kenn Rein    Six    96  female
 33  34     Gain Toe  Seven    69    male
 ```
+The data contains some missing values, indicated by NaN.
+
+To check how many NaN values are in each column, `df.isnull().sum()` is used.
+
+```python
+df.isnull().sum()
+```
+
+Output:
+
+```
+	0
+id	0
+name	1
+class	1
+mark	0
+gender	2
+
+dtype: int64
+```
+
 
 ### 🧹  Cleaning missing values
 Explain how you handled NaN values, corrected inconsistent entries, etc.
