@@ -288,6 +288,7 @@ male	18
 
 dtype: int64
 ```
+>From the output, the comparison of marks by class and gender is not very meaningful because the distribution of genders across classes is uneven, and some classes do not contain any female students at all.
 
 
 
