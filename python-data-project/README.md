@@ -228,21 +228,39 @@ df.groupby(['class', 'gender'])['mark'].mean().round(0).astype(int)
 ```
 Output:
 ```
-		mark
+	mark
 class	gender	
 Eight	male	79
-Five	male	79
+Fifth	male	78
+Five	male	80
 Four	female	64
-male	77
+		male	77
 Nine	female	65
-male	18
+		male	18
 Seven	female	81
-male	74
-Six	female	89
-male	54
+		male	74
+Six		female	89
+		male	54
 Three	male	70
 
 dtype: int64
+```
+By analysing the data and calculating the average mark by class and gender, inconsistencies in the `class` column were identified: some values are entered as adjectives (e.g., `fourth`, `fifth`) and some as words (e.g., `four`, `five`). Therefore, additional cleaning is needed to ensure consistent values for each class.
+
+```python
+# DATA CLEANING - Standardise class names
+# Replace ordinal words (third, fourth, …) with consistent number words (three, four, …)
+df['class'] = df['class'].replace({
+    'First': 'One',
+    'Second': 'Two',
+    'Third': 'Three',
+    'Fourth': 'Four',
+    'Fifth': 'Five',
+    'Sixth': 'Six',
+    'Seventh': 'Seven',
+    'Eighth': 'Eight',
+    'Ninth': 'Nine'
+})
 ```
 
 
