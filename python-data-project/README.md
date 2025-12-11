@@ -118,7 +118,6 @@ gender	2
 dtype: int64
 ```
 
-
 ### 🧹  Cleaning missing values
 Firstly, a new DataFrame was created with rows containing NaN values so that students can be identified and contacted to complete the information.
 
@@ -207,7 +206,10 @@ dtype: int64
 ```
 The distribution shows there are an equal number of female and male students (16 each).
 
+> This text has a vertical line on the left
+
 Average mark by gender:
+
 
 
 
