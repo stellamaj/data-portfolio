@@ -209,17 +209,44 @@ dtype: int64
 
 Average mark by gender:
 ```python
-df.groupby('gender')['mark'].mean()
+df.groupby('gender')['mark'].mean().round(0).astype(int)
 ```
 Output:
 ```
 		mark
 gender	
-female	77.3125
-male	70.5625
+female	77
+male	71
 
 dtype: float64
 ```
+>Output shows that female students' marks are higher than male students' at the university.
+
+Average mark by class and gender
+```python
+df.groupby(['class', 'gender'])['mark'].mean().round(0).astype(int)
+```
+Output:
+```
+		mark
+class	gender	
+Eight	male	79
+Five	male	79
+Four	female	64
+male	77
+Nine	female	65
+male	18
+Seven	female	81
+male	74
+Six	female	89
+male	54
+Three	male	70
+
+dtype: int64
+```
+
+
+
 
 
 
