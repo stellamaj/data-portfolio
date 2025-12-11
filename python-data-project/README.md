@@ -117,6 +117,7 @@ gender	2
 
 dtype: int64
 ```
+>From the output, the columns `name` and `class` each have one missing value, and `gender` has two missing values.
 
 ### 🧹  Cleaning missing values
 Firstly, a new DataFrame was created with rows containing NaN values so that students can be identified and contacted to complete the information.
