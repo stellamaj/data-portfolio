@@ -58,13 +58,6 @@ From the `info()` output, there are 35 total entries. However, the columns `name
 
 To view the rows with `NaN` values, the DataFrame can be displayed using `df` in Jupyter Notebook for a rich view, or printed with `print(df)`:
 
-```python
-# Display DataFrame for rich view in Jupyter Notebook
-df
-
-# Or print the DataFrame
-print(df)
-```
 Output from print(df):
 
 ```
