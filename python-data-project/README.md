@@ -108,8 +108,8 @@ df.isnull().sum()
 Output:
 
 ```
-	0
-id	0
+		0
+id		0
 name	1
 class	1
 mark	0
