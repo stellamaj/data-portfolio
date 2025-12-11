@@ -245,7 +245,7 @@ Three	male	70
 
 dtype: int64
 ```
-By analysing the data and calculating the average mark by class and gender, inconsistencies in the `class` column were identified: some values are entered as adjectives (e.g., `fourth`, `fifth`) and some as words (e.g., `four`, `five`). Therefore, additional cleaning is needed to ensure consistent values for each class.
+>By analysing the data and calculating the average mark by class and gender, inconsistencies in the `class` column were identified: some values >are entered as adjectives (e.g., `fourth`, `fifth`) and some as words (e.g., `four`, `five`). Therefore, additional cleaning is needed to ensure >consistent values for each class.
 
 ```python
 # DATA CLEANING - Standardise class names
