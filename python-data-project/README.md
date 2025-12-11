@@ -189,8 +189,7 @@ np.int64(0)
 ```
 From the output `0`, we know there are no `NaN` values in the DataFrame, so it is ready for analysis.
 
-### 📊  Analysing distributions
-Describe any patterns you explored, e.g., value counts or group averages.
+### 📊  Analysing
 
 Exploring the distribution of students by gender at the university using `value_counts()`.
 
@@ -206,6 +205,9 @@ male	16
 
 dtype: int64
 ```
+The distribution shows there are an equal number of female and male students (16 each).
+
+Average mark by gender:
 
 
 
