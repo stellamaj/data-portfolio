@@ -4,7 +4,7 @@
 This project showcases data analysis using Python and Pandas. It includes data inspection, cleaning, analysis, and visualisation tasks.
 
 ## Dataset
-The dataset `student.csv` is loaded from Google Drive into Jupyter Notebook, which is used for coding.
+The dataset `student.csv` is loaded from Google Drive into a Google Colab (Jupyter Notebook) environment, where it is inspected, cleaned, analysed, and visualised.
 
 ```python
 from google.colab import drive
