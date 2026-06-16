@@ -429,10 +429,20 @@ plt.show()
 ```
 <img src="images/top_by_gender.png" width="500" alt="Pie chart showing proportion of top-performing students by gender">
 
+---
 
-## Results
-Short summary of insights or outputs, e.g., charts, top students, trends.
+## 📌 Summary of Analysis
 
-## How to Run
-Instructions to open the Jupyter Notebook and reproduce the analysis.
+This project demonstrated a complete data analysis workflow using Python and Pandas, including data loading, inspection, cleaning, transformation, and visualisation.
+
+Missing values were identified and removed to ensure data quality, and inconsistencies in the class labels were standardised to improve analysis accuracy. After cleaning, the dataset was fully prepared for exploration.
+
+### Key insights from the analysis include:
+- Gender distribution was balanced across the dataset  
+- Female students achieved a higher average mark than male students  
+- Performance varied across classes, though uneven group sizes affected comparisons  
+- A subset of high-achieving students (mark > 80) was identified for further analysis  
+- Among top performers, female students formed a slightly larger proportion than male students  
+
+Overall, this project shows how structured data analysis can be used to clean raw data, uncover patterns, and communicate findings clearly through visualisation.
 
