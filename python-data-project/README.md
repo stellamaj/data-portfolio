@@ -56,7 +56,7 @@ memory usage: 1.5+ KB
 ```
 >From the `info()` output, there are 35 total entries. However, the columns `name` and `class` each show 34 non-null values, which means they contain 1 missing value each. The `gender` column has 33 non-null values, so it contains 2 missing values.
 
-To view the rows with `NaN` values, the DataFrame can be displayed using `df` in Jupyter Notebook for a rich view, or printed with `print(df)`:
+To view rows with NaN values, display the DataFrame as `df` in Jupyter Notebook for a rich view, or use `print(df)`.
 
 Output from print(df):
 
