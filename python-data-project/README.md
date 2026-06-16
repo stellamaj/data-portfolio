@@ -97,13 +97,15 @@ Output from print(df):
 32  33    Kenn Rein    Six    96  female
 33  34     Gain Toe  Seven    69    male
 ```
->The data contains some missing values, indicated by NaN.
+> The data contains some missing values, indicated by NaN.
 
 To check how many `NaN` values are in each column, `df.isnull().sum()` is used.
 
 ```python
 df.isnull().sum()
 ```
+> df.isnull() → creates True/False table  
+> .sum() → counts True values per column
 
 Output:
 
