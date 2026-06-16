@@ -356,7 +356,9 @@ plt.show()
 
 ---
 
-**Creating a new DataFrame for deeper analysis to identify high-achieving students**
+**Identifying high-achieving students**
+
+Creating a new DataFrame for deeper analysis to identify high-achieving students
 
 ```python
 top_students = df[df['mark'] > 80]
@@ -390,7 +392,7 @@ plt.ylabel('Student')
 plt.show()
 ```
 
-<img src="images/top_students.png" width="500" alt="Distribution of top student marks shown as a histogram">
+<img src="images/top_students.png" width="500" alt="Scatter plot of top students showing marks by student name">
 
 ---
 
@@ -404,7 +406,9 @@ Output:
 Number of top students: 13
 ```
 
-Number of top-performing students by gender
+---
+
+**Number of top-performing students by gender**
 
 ```python
 top_by_gender = top_students.groupby('gender').size()
@@ -417,6 +421,13 @@ female    8
 male      5
 dtype: int64
 ```
+```python
+top_by_gender.plot(kind='pie', autopct='%1.1f%%')
+plt.title('Top-performing students by gender')
+plt.ylabel('')
+plt.show()
+```
+<img src="images/top_by_gender.png" width="500" alt="Pie chart showing proportion of top-performing students by gender">
 
 
 ## Results
