@@ -355,7 +355,12 @@ dtype: int64
 ```
 
 ### 📈  Creating visualisations
-List the charts you created and what insights they show.
+To create visualisations in this project, matplotlib.pyplot was imported as plt. Although Pandas provides a .plot() function, matplotlib.pyplot gives more control over how visualisations are displayed and customised, such as changing figure size, adding titles and labels, and customising plots.
+
+```python
+import matplotlib.pyplot as plt
+```
+
 
 
 ## Results
