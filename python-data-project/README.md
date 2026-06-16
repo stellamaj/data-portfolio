@@ -229,12 +229,10 @@ df.groupby('gender')['mark'].mean().round(0).astype(int)
 > → converts result from float to integer
 Output:
 ```
-		mark
-gender	
-female	77
-male	71
-
-dtype: float64
+		gender
+female    77
+male      71
+Name: mark, dtype: int64
 ```
 >Output shows that female students' marks are higher than male students' at the university.
 
