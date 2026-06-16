@@ -220,8 +220,7 @@ plt.xlabel('Gender')
 plt.ylabel('Count')
 plt.show()
 ```
-![Gender distribution](images/gender_distribution.png)
-
+<img src="images/gender_distribution.png" width="350">
 
 
 >The distribution shows there are an equal number of female and male students (16 each).
