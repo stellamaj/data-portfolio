@@ -352,11 +352,11 @@ plt.show()
 ```
 <img src="images/avg_marks.png" width="500" alt="Average mark by class and gender bar chart">
 
-
-
 >From the output, the comparison of marks by class and gender is not very meaningful because the distribution of genders across classes is uneven, and some classes do not contain any female students at all.
 
-Creating a new DataFrame for deeper analysis to identify high-achieving students
+---
+
+**Creating a new DataFrame for deeper analysis to identify high-achieving students**
 
 ```python
 top_students = df[df['mark'] > 80]
@@ -382,7 +382,19 @@ Output:
 34	35	Rows Noump	Six		88		female
 ```
 
-Number of top-performing students at the university
+```python
+plt.scatter(top_students['mark'], top_students['name'])
+plt.title('Top students marks distribution')
+plt.xlabel('Mark')
+plt.ylabel('Student')
+plt.show()
+```
+
+<img src="images/top_students.png" width="500" alt="Distribution of top student marks shown as a histogram">
+
+---
+
+**Number of top-performing students at the university**
 
 ```python
 print(f"Number of top students: {len(top_students)}")
@@ -405,14 +417,6 @@ female    8
 male      5
 dtype: int64
 ```
-
-### 📈  Creating visualisations
-To create visualisations in this project, matplotlib.pyplot was imported as plt. Although Pandas provides a .plot() function, matplotlib.pyplot gives more control over how visualisations are displayed and customised, such as changing figure size, adding titles and labels, and customising plots.
-
-```python
-import matplotlib.pyplot as plt
-```
-
 
 
 ## Results
