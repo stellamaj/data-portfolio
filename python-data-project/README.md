@@ -213,6 +213,20 @@ Average mark by gender:
 ```python
 df.groupby('gender')['mark'].mean().round(0).astype(int)
 ```
+> groupby('gender')  
+> → splits data into groups (Male, Female, etc.)  
+>  
+> ['mark']  
+> → selects only the mark column  
+>  
+> .mean()  
+> → calculates average mark per gender  
+>  
+> .round(0)  
+> → rounds to nearest whole number  
+>  
+> .astype(int)  
+> → converts result from float to integer
 Output:
 ```
 		mark
