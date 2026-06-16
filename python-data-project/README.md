@@ -193,7 +193,7 @@ np.int64(0)
 
 ### 📊  Analysing
 
-Exploring the distribution of students by gender at the university using `value_counts()`.
+Exploring the distribution of students by gender at the university using `value_counts()`:
 
 ```python
 df['gender'].value_counts()
@@ -236,7 +236,7 @@ Name: mark, dtype: int64
 ```
 >Output shows that female students' marks are higher than male students' at the university.
 
-Average mark by class and gender
+Average mark by class and gender:
 ```python
 df.groupby(['class', 'gender'])['mark'].mean().round(0).astype(int)
 ```
