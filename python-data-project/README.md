@@ -99,7 +99,7 @@ Output from print(df):
 ```
 >The data contains some missing values, indicated by NaN.
 
-To check how many NaN values are in each column, `df.isnull().sum()` is used.
+To check how many `NaN` values are in each column, `df.isnull().sum()` is used.
 
 ```python
 df.isnull().sum()
@@ -135,7 +135,7 @@ Output:
 26  27       NaN  Three    81    NaN
 ```
 
-Drop rows with NaN values to ensure the DataFrame contains only complete records, and display the cleaned DataFrame.
+Drop rows with `NaN` values to ensure the DataFrame contains only complete records, and display the cleaned DataFrame.
 
 ```python
 df = df.dropna()
@@ -178,7 +178,7 @@ Output:
 33  34     Gain Toe  Seven    69    male
 34  35   Rows Noump    Six    88  female
 ```
-To confirm that there are no NaN values in the DataFrame, `df.isnull().sum().sum()` is used.
+To confirm that there are no `NaN` values in the DataFrame, `df.isnull().sum().sum()` is used.
 
 ```python
 df.isnull().sum().sum()
