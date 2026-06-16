@@ -191,8 +191,14 @@ np.int64(0)
 ```
 >From the output `0`, we know there are no `NaN` values in the DataFrame, so it is ready for analysis.
 
-### 📊  Analysing
+### 📊  Analysis and Visualisation
 
+To create visualisations, `matplotlib.pyplot` was imported. Although Pandas provides a `.plot()` function, `matplotlib.pyplot` gives more control over how visualisations are displayed and customised, such as figure size, titles, labels, and styling.
+
+```python
+import matplotlib.pyplot as plt
+```
+**Gender Distribution**
 Exploring the distribution of students by gender at the university using `value_counts()`:
 
 ```python
@@ -207,6 +213,17 @@ male	16
 
 dtype: int64
 ```
+```python
+df['gender'].value_counts().plot(kind='bar')
+plt.title('Gender distribution')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.show()
+```
+![Gender distribution](images/gender_distribution.png)
+
+
+
 >The distribution shows there are an equal number of female and male students (16 each).
 
 Average mark by gender:
