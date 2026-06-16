@@ -199,6 +199,7 @@ To create visualisations, `matplotlib.pyplot` was imported. Although Pandas prov
 import matplotlib.pyplot as plt
 ```
 **Gender Distribution**
+
 Exploring the distribution of students by gender at the university using `value_counts()`:
 
 ```python
@@ -220,13 +221,13 @@ plt.xlabel('Gender')
 plt.ylabel('Count')
 plt.show()
 ```
-<img src="images/gender_distribution.png" width="350" alt="Gender distribution bar chart showing equal number of male and female students">
+<img src="images/gender_distribution.png" width="500" alt="Gender distribution bar chart showing equal number of male and female students">
 
 >The distribution shows there are an equal number of female and male students (16 each).
 
 ---
 
-Average mark by gender:
+**Average mark by gender**
 ```python
 df.groupby('gender')['mark'].mean().round(0).astype(int)
 ```
@@ -268,7 +269,9 @@ plt.show()
 
 >Output shows that female students' marks are higher than male students' at the university.
 
-Average mark by class and gender:
+---
+
+**Average mark by class and gender**
 ```python
 df.groupby(['class', 'gender'])['mark'].mean().round(0).astype(int)
 ```
@@ -334,6 +337,23 @@ Nine	female	65
 
 dtype: int64
 ```
+```python
+avg_marks = df.groupby(['class', 'gender'], observed=True)['mark'].mean().unstack()
+
+avg_marks.plot(kind='bar')
+
+plt.title('Average mark by class and gender')
+plt.xlabel('Class')
+plt.ylabel('Average mark')
+plt.xticks(rotation=0)
+plt.ylim(0, 100)
+
+plt.show()
+```
+<img src="images/avg_marks.png" width="500" alt="Average mark by class and gender bar chart">
+
+
+
 >From the output, the comparison of marks by class and gender is not very meaningful because the distribution of genders across classes is uneven, and some classes do not contain any female students at all.
 
 Creating a new DataFrame for deeper analysis to identify high-achieving students
