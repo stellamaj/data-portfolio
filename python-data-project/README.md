@@ -220,10 +220,11 @@ plt.xlabel('Gender')
 plt.ylabel('Count')
 plt.show()
 ```
-<img src="images/gender_distribution.png" width="500">
-
+<img src="images/gender_distribution.png" width="350" alt="Gender distribution bar chart showing equal number of male and female students">
 
 >The distribution shows there are an equal number of female and male students (16 each).
+
+---
 
 Average mark by gender:
 ```python
@@ -250,6 +251,21 @@ female    77
 male      71
 Name: mark, dtype: int64
 ```
+```python
+df.groupby('gender')['mark'].mean().plot(kind='barh')
+
+plt.title('Average mark by gender')
+plt.xlabel('Average mark')
+plt.ylabel('Gender')
+plt.xlim(0, 100)
+
+for i, v in enumerate(df.groupby('gender')['mark'].mean()):
+    plt.text(v + 1, i, str(round(v)), va='center')
+
+plt.show()
+```
+<img src="images/average_mark_gender.png" width="500" alt="Average mark by gender bar chart">
+
 >Output shows that female students' marks are higher than male students' at the university.
 
 Average mark by class and gender:
