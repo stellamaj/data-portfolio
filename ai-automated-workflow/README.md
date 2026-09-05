@@ -51,6 +51,6 @@ At this stage, the flow canvas may show an **Invalid parameters** message. This 
 
 <img src="images/trigger-05.png" alt="OneDrive folder selection" width="700">
 
-8. Check that the **Folder** field shows the correct folder (e.g. `/Netflix Dataset Cleaning`) and that the **Invalid parameters** warning has disappeared from the trigger box. Click **Save** in the top-right corner of the screen.
+8. Check that the **Folder** field shows the correct folder (e.g. `/Netflix Dataset Cleaning`) and that the **Invalid parameters** warning has disappeared from the trigger box. Collapse the **trigger settings panel** to return to the flow canvas.
 
-<img src="images/trigger-06.png" alt="Trigger settings showing the selected OneDrive folder with no Invalid parameters warning and the Save button" width="700">
+<img src="images/trigger-06.png" alt="Trigger settings panel with collapse button" width="700">
