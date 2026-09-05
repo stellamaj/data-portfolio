@@ -119,3 +119,27 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 8. Select `Close`. There is no need to change the name of the `Document input` placeholder.
 
 <img src="images/ai-08.png" alt="Document input placeholder window with Close button" width="700">
+
+9. Enter the prompt next to the `Document input` placeholder and select the `Save` button.
+
+<img src="images/ai-09.png" alt="Custom Prompt with instructions and Document input placeholder" width="700">
+
+10. In the `Document input` field, type `/` and select `Insert dynamic content` from the dropdown.
+
+<img src="images/ai-10.png" alt="Document input field with Insert dynamic content option" width="700">
+
+11. Select `File content` from the `When a file is created` section in the dynamic content dropdown.
+
+<img src="images/ai-11.png" alt="Dynamic content with File content option" width="700">
+
+12. Select the `Save` button at the top right of the screen.
+
+<img src="images/ai-12.png" alt="Save button at the top right" width="700">
+
+> Note: The `base64(...)` part is Power Automate converting the file content into text so that the AI step can read it. The `Item.item/source` information is added automatically by AI Builder and does not need to be changed.
+
+> The green confirmation banner indicates that the step has been completed successfully and the flow is ready to continue.
+
+<img src="images/ai-13.png" alt="Completed Run a prompt step with green confirmation banner" width="700">
+
+### 3. Data Analyst reviews AI findings
