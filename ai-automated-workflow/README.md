@@ -281,3 +281,15 @@ function main(workbook: ExcelScript.Workbook) {
 16. Select the `Save` button at the top right of the screen.
 
 <img src="images/rule-16.png" alt="Save button at the top right" width="700">
+
+### 5. Notify Data Analyst
+
+Power Automate notifies the Data Analyst that the cleaned file is ready after the rule based cleaning has finished.
+
+1. Click the `+` button below `Run script` on the canvas.
+
+<img src="images/notify-01.png" alt="Plus button below Run script" width="700">
+
+2. In the search box, type `send an email` and press `Enter`. Look for `Send an email (V2)` under `Office 365 Outlook`, then select it.
+
+<img src="images/notify-02.png" alt="Send an email V2 under Office 365 Outlook" width="700">
