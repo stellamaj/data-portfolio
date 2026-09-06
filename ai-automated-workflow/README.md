@@ -143,3 +143,141 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 <img src="images/ai-13.png" alt="Completed Run a prompt step with green confirmation banner" width="700">
 
 ### 3. Data Analyst reviews AI findings
+
+1. Click the `+` button below `Run a prompt` on the canvas to add the approval step.
+
+<img src="images/approval-01.png" alt="Plus button below Run a prompt" width="700">
+
+2. In the search box, type `Approval` and press `Enter`. Under `Standard approvals`, select `Start and wait for an approval`.
+
+<img src="images/approval-02.png" alt="Approval search results with Start and wait for an approval" width="700">
+
+> This pauses the flow and sends the Data Analyst a task to review the AI findings before the flow continues.
+
+3. In the `Title` field, enter a title, for example, `Review AI data findings`. Then select the light bulb icon to insert dynamic content.
+
+<img src="images/approval-03.png" alt="Approval title field with dynamic content icon" width="700">
+
+4. Select `File name` under `When a file is created`.
+
+<img src="images/approval-04.png" alt="File name under When a file is created" width="700">
+
+5. In the `Assigned to` field, enter an email address (for this build, use your own email address).
+
+> Note: Power Automate will search your organisation's contacts as you type. Select the matching contact that appears.
+
+<img src="images/approval-05.png" alt="Assigned to field with email address" width="700">
+
+6. Click in the `Details` field. Then select the dynamic content picker (lightning bolt) and, under `Run a prompt`, select `Text` to insert the AI's findings (the `Run a prompt` step's response/output).
+
+<img src="images/approval-06.png" alt="Details field with Run a prompt Text option" width="700">
+
+7. Select the `Save` button at the top right of the screen.
+
+<img src="images/approval-07.png" alt="Save button at the top right" width="700">
+
+### 4. Rule Based Cleaning
+
+The rule based cleaning is done using an Office Script in Excel, which applies `CLEAN` and `TRIM` to text values and removes duplicate rows. This script is created directly in Excel Online, then called from Power Automate using the `Run script` action, so the same cleaning happens automatically every time the flow runs.
+
+1. Add an Excel file containing the dataset to the designated OneDrive folder, for example, `netflix_titles.xlsx`.
+
+<img src="images/rule-01.png" alt="Excel dataset file in OneDrive folder" width="700">
+
+> Note: Uploading the file at this stage triggers the flow, even though the rule based cleaning step isn't built yet. This is fine while building the flow — it just causes an incomplete run that pauses at the approval step.
+
+2. Open `netflix_titles.xlsx` in Excel Online.
+
+<img src="images/rule-02.png" alt="netflix_titles.xlsx open in Excel Online" width="700">
+
+3. Select `Automate` in the top ribbon.
+
+<img src="images/rule-03.png" alt="Automate in the top ribbon" width="700">
+
+4. Select `New Script`, then select `Create in Code Editor`.
+
+<img src="images/rule-04.png" alt="New Script menu with Create in Code Editor option" width="700">
+
+5. Select `Write a script`.
+
+<img src="images/rule-05.png" alt="Write a script option" width="700">
+
+6. Click into the code area, select all the existing text using `Ctrl+A` (Windows) or `Cmd+A` (Mac), delete it, and paste the following script:
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+  let sheet = workbook.getActiveWorksheet();
+  let usedRange = sheet.getUsedRange();
+  let values = usedRange.getValues();
+
+  // Clean and trim every text cell, leave numbers and dates untouched
+  for (let row = 0; row < values.length; row++) {
+    for (let col = 0; col < values[row].length; col++) {
+      let cell = values[row][col];
+      if (typeof cell === "string") {
+        let cleaned = cell.replace(/[\x00-\x1F\x7F]/g, "").trim().replace(/\s+/g, " ");
+        values[row][col] = cleaned;
+      }
+    }
+  }
+  usedRange.setValues(values);
+
+  // Remove duplicate rows, checking every column, assuming row 1 is headers
+  let columnCount = usedRange.getColumnCount();
+  let columnsToCheck: number[] = [];
+  for (let i = 0; i < columnCount; i++) {
+    columnsToCheck.push(i);
+  }
+  usedRange.removeDuplicates(columnsToCheck, true);
+}
+```
+
+<img src="images/rule-06.png" alt="Office Script code editor with cleaning script" width="700">
+
+7. Rename the script by selecting the `Rename` button and entering `CleanData`.
+
+<img src="images/rule-07.png" alt="Rename button and CleanData script name" width="700">
+
+8. Select the `▷` (play) button to run the script and check that it works on the file.
+
+<img src="images/rule-08.png" alt="Play button to run the CleanData script on the file" width="700">
+
+9. Go back to Power Automate to add the script as a step in your flow. Select the `+` button below `Start and wait for an approval`.
+
+<img src="images/rule-09.png" alt="Plus button below Start and wait for an approval" width="700">
+
+10. In the search box type `Run script`. In the results, select `Run script` under `Excel Online (Business)`.
+
+<img src="images/rule-10.png" alt="Run script under Excel Online Business in the search results" width="700">
+
+11. Select `Sign in` and follow the prompts to connect to `Excel Online (Business)` using the same Microsoft account you are already using.
+
+<img src="images/rule-11.png" alt="Sign in to Excel Online Business" width="700">
+
+12. Select the `Location` dropdown and choose `OneDrive for Business`.
+
+<img src="images/rule-12.png" alt="Location dropdown with OneDrive for Business option" width="700">
+
+12. Select the `Location` dropdown and choose `OneDrive for Business`.
+
+<img src="images/rule-12.png" alt="Location dropdown with OneDrive for Business option" width="700">
+
+13. Select the `Document Library` dropdown and choose `OneDrive`.
+
+<img src="images/rule-13.png" alt="Document Library dropdown with OneDrive option" width="700">
+
+14. Select the folder icon next to the `File` field and browse to select `netflix_titles.xlsx` from the `Netflix Dataset Cleaning` folder.
+
+<img src="images/rule-14.png" alt="File selection showing netflix_titles.xlsx in the Netflix Dataset Cleaning folder" width="700">
+
+15. Select the `Script` dropdown and choose `CleanData`, the script you created.
+
+<img src="images/rule-15.png" alt="Script dropdown with CleanData selected" width="700">
+
+> Note: The script isn't stored in the Excel file itself. It's saved to the Office Scripts library, which is tied to the Microsoft 365 account. Power Automate's `Run script` action reads from the same library, so any script created there appears automatically. No separate connecting step is needed.
+>
+> Office Scripts only work through Excel Online (Excel on the web), not the desktop app. That's why we had to write and run the script online.
+
+16. Select the `Save` button at the top right of the screen.
+
+<img src="images/rule-16.png" alt="Save button at the top right" width="700">
