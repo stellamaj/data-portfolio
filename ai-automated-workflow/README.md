@@ -59,11 +59,39 @@ At this stage, the flow canvas may show an **Invalid parameters** message. This 
 
 <img src="images/trigger-06.png" alt="Trigger settings panel with collapse button" width="700">
 
-
-
 ### 2. Convert file
 
+1. Click the `+` below the trigger. The `Add an action` panel opens on the right.
 
+<img src="images/convert-01.png" alt="Add an action panel" width="700">
+
+2. Type `Convert file` in the `Search` field. The available options will appear below. Select `Convert File`.
+
+<img src="images/convert-02.png" alt="Convert File search results" width="700">
+
+The `Convert file` action has been added to the flow.
+
+<img src="images/convert-03.png" alt="Convert file action in the flow" width="700">
+
+3. In the `File` field, type `/` and select `Insert dynamic content` from the dropdown.
+
+The file is selected dynamically, so the flow can process a different Excel file each time it is triggered. Power Automate uses the `File identifier` from the trigger to identify the file that needs to be converted.
+
+<img src="images/convert-04.png" alt="File field with Insert dynamic content option" width="700">
+
+Select `File identifier` under `When a file is created`.
+
+<img src="images/convert-05.png" alt="Dynamic content with File identifier option" width="700">
+
+> Note: `Target type` defaults to `PDF`, so no change was needed here.
+
+<img src="images/convert-06.png" alt="Convert file with File identifier and PDF target type" width="700">
+
+4. Select the `Save` button at the top right of the screen.
+
+> Note: Save the flow after completing each step. This ensures that the latest changes are stored and helps prevent losing progress if an error occurs.
+
+<img src="images/convert-07.png" alt="Save button at the top right" width="700">
 
 ### 3. AI Step
 
