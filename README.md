@@ -6,14 +6,6 @@ This repository showcases my data analysis and automation projects using tools i
 
 ## Projects
 
-### AI-Powered Data Cleaning Workflow
+[Python Data Project](python-data-project/)
 
-An automated Power Automate workflow that uses AI to identify data quality issues, includes Data Analyst review, and applies rule based cleaning to Excel data.
-
-[View project](ai-automated-workflow/)
-
-### Python Data Project
-
-A data analysis project using Python.
-
-[View project](python-data-project/)
+[AI-Powered Data Cleaning Workflow](ai-automated-workflow/)
