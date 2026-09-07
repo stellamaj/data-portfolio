@@ -27,7 +27,7 @@ Before creating the flow, set up the folder in **OneDrive for Business** where t
 
 Open Power Automate and select the `Automated cloud flow` tile, since the workflow needs to start automatically when a new Excel file is added to a folder — not on a manual click or a fixed schedule.
 
-<img src="images/setup.png" alt="Power Automate setup" width="700">
+<img src="images/setup-01.png" alt="Power Automate setup" width="700">
 
 ### 1. Trigger (Excel file added to OneDrive)
 
@@ -37,7 +37,7 @@ In the **Build an automated cloud flow** window:
 2. Select **When a file is created (OneDrive for Business)** as the trigger.
 3. Select **Create**.
 
-<img src="images/setup.png" alt="Build an automated cloud flow window showing the flow name field and OneDrive for Business file creation trigger" width="700">
+<img src="images/setup-02.png" alt="Build an automated cloud flow window showing the flow name field and OneDrive for Business file creation trigger" width="700">
 
 At this stage, the flow canvas may show an **Invalid parameters** message. This is expected because the folder has not been selected yet.
 
