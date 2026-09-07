@@ -111,45 +111,43 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 
 <img src="images/ai-03.png" alt="Run a prompt step and Create Connection panel" width="700">
 
-3. In the `Connection name` field, enter a name for the connection. This is just a label to help you recognise the connection later, for example, `AI Prompt Connection`.
-
-4. Leave `Authentication Type` set to `Oauth`, which is the standard sign-in method using your account. Select the `Sign in` button.
+3. In the `Connection name` field, enter a name for the connection. This is just a label to help you recognise the connection later, for example, `AI Prompt Connection`. Leave `Authentication Type` set to `Oauth`, which is the standard sign-in method using your account. Select the `Sign in` button.
 
 <img src="images/ai-04.png" alt="Create Connection panel with connection name and authentication type" width="700">
 
 > **Note:** Being signed into Power Automate only gives you access to the app itself. Each individual action, such as `Run a prompt`, connects to a separate Microsoft service behind the scenes, so you need to sign in to that service as well.
 
-5. Select `New custom prompt`. None of the ready-made prompts are designed to check data type and format issues, so a custom prompt is needed.
+4. Select `New custom prompt`. None of the ready-made prompts are designed to check data type and format issues, so a custom prompt is needed.
 
 <img src="images/ai-05.png" alt="New custom prompt option" width="700">
 
 > Note: The `Invalid parameters` warning is expected at this stage. It just means the step isn't fully configured yet, not that something has gone wrong.
 
-6. In the `Custom Prompt` window, select the `+ Add content` button at the bottom.
+5. In the `Custom Prompt` window, select the `+ Add content` button at the bottom.
 
 <img src="images/ai-06.png" alt="Custom Prompt window with Add content button" width="700">
 
-7. Under `Input`, select `Image or document`. This option allows you to add the content of the file. `Document input` is used as a placeholder in the prompt instructions.
+6. Under `Input`, select `Image or document`. This option allows you to add the content of the file. `Document input` is used as a placeholder in the prompt instructions.
 
 <img src="images/ai-07.png" alt="Image or document option under Input" width="700">
 
-8. Select `Close`. There is no need to change the name of the `Document input` placeholder.
+7. Select `Close`. There is no need to change the name of the `Document input` placeholder.
 
 <img src="images/ai-08.png" alt="Document input placeholder window with Close button" width="700">
 
-9. Enter the prompt next to the `Document input` placeholder and select the `Save` button.
+8. Enter the prompt next to the `Document input` placeholder and select the `Save` button.
 
 <img src="images/ai-09.png" alt="Custom Prompt with instructions and Document input placeholder" width="700">
 
-10. In the `Document input` field, type `/` and select `Insert dynamic content` from the dropdown.
+9. In the `Document input` field, type `/` and select `Insert dynamic content` from the dropdown.
 
 <img src="images/ai-10.png" alt="Document input field with Insert dynamic content option" width="700">
 
-11. Select `File content` from the `When a file is created` section in the dynamic content dropdown.
+10. Select `File content` from the `When a file is created` section in the dynamic content dropdown.
 
 <img src="images/ai-11.png" alt="Dynamic content with File content option" width="700">
 
-12. Select the `Save` button at the top right of the screen.
+11. Select the `Save` button at the top right of the screen.
 
 <img src="images/ai-12.png" alt="Save button at the top right" width="700">
 
