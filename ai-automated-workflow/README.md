@@ -17,6 +17,8 @@ This project demonstrates an AI-powered automated workflow for cleaning Excel da
 
 ## Building the workflow in Power Automate
 
+> Note: While configuring the workflow, Power Automate may show messages such as `Invalid parameters` or `'Field' is required` when a required field has not yet been completed. These warnings are expected during configuration and disappear once the required fields are filled in.
+
 ### Prerequisite
 
 Before creating the flow, set up the folder in **OneDrive for Business** where the Excel files will be added. The trigger will monitor this folder for new files.
@@ -42,6 +44,8 @@ At this stage, the flow canvas may show an **Invalid parameters** message. This 
 4. Click the **When a file is created** box to expand the trigger settings.
 
 <img src="images/trigger-02.png" alt="Flow canvas showing the Invalid parameters message" width="700">
+
+> Note: The `Invalid parameters` warning is expected at this stage because the required folder has not been selected yet. It will disappear once the trigger is fully configured.
 
 5. Check the connection status. If it says **Not connected**, select the **Change connection** link.
 
@@ -95,7 +99,7 @@ Select `File identifier` under `When a file is created`.
 
 ### 3. AI Step
 
-1. Click the `+` below the trigger. The `Add an action` panel opens on the right.
+1. Click the `+` below `Convert file`. The `Add an action` panel opens on the right.
 
 <img src="images/ai-01.png" alt="Add an action panel" width="700">
 
@@ -118,6 +122,8 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 5. Select `New custom prompt`. None of the ready-made prompts are designed to check data type and format issues, so a custom prompt is needed.
 
 <img src="images/ai-05.png" alt="New custom prompt option" width="700">
+
+> Note: The `Invalid parameters` warning is expected at this stage. It just means the step isn't fully configured yet, not that something has gone wrong.
 
 6. In the `Custom Prompt` window, select the `+ Add content` button at the bottom.
 
