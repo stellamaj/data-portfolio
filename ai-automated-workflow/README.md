@@ -11,17 +11,21 @@ This project demonstrates an AI-powered automated workflow for cleaning Excel da
 | One risk | AI could incorrectly identify a data type or format issue. |
 | The safeguard against that risk | A Data Analyst reviews the AI findings and fixes any flagged issues before the rule based cleaning steps are applied. |
 
+> Note about the original approach: The original approach was to trigger the workflow when a CSV file was added. However, Power Automate does not provide a `Convert file` action to convert a CSV file into an Excel file. Therefore, the workflow was changed so that an Excel file must be uploaded to the OneDrive folder as the prerequisite.
+
+> Note about file size limits: The `Convert file` step, which prepares the Excel file for the AI to read, has a page limit when converting the spreadsheet to PDF. Very large spreadsheets may therefore fail at this step. I tested the process using a smaller sample dataset to avoid this limitation.
+
 ## Building the workflow in Power Automate
+
+### Prerequisite
+
+Before creating the flow, set up the folder in **OneDrive for Business** where the Excel files will be added. The trigger will monitor this folder for new files.
 
 ### Setup/Configuration
 
 Open Power Automate and select the `Automated cloud flow` tile, since the workflow needs to start automatically when a new Excel file is added to a folder — not on a manual click or a fixed schedule.
 
 <img src="images/setup.png" alt="Power Automate setup" width="700">
-
-### Prerequisite
-
-Before creating the flow, set up the folder in **OneDrive for Business** where the Excel files will be added. The trigger will monitor this folder for new files.
 
 ### 1. Trigger (Excel file added to OneDrive)
 
@@ -55,34 +59,13 @@ At this stage, the flow canvas may show an **Invalid parameters** message. This 
 
 <img src="images/trigger-06.png" alt="Trigger settings panel with collapse button" width="700">
 
-### Note about the original approach
 
-The original approach was to trigger the workflow when a CSV file was added. However, Power Automate does not provide a `Convert file` action to convert a CSV file into an Excel file. Therefore, the workflow was changed so that an Excel file must be uploaded to the OneDrive folder as the prerequisite.
-
-<!--
 
 ### 2. Convert file
 
-1. Click the `+` below the trigger. The `Add an action` panel opens on the right.
 
-<img src="images/convert-01.png" alt="Add an action panel" width="700">
 
-2. Type `Convert file` in the `Search` field. The available options will appear below. Select `Convert File`.
-
-<img src="images/convert-02.png" alt="Convert File search results" width="700">
-
-The `Convert file` action has been added to the flow.
-
-<img src="images/convert-03.png" alt="Convert file action in the flow" width="700">
-
-3. In the `File` field, type `/` and select `Insert dynamic content` from the dropdown.
-
-The file name is dynamic, so the flow can process a different CSV file each time it is triggered. Power Automate captures the name of the file that triggered the flow.
-
-<img src="images/convert-04.png" alt="File field with Insert dynamic content option" width="700">
--->
-
-### AI Step
+### 3. AI Step
 
 1. Click the `+` below the trigger. The `Add an action` panel opens on the right.
 
@@ -142,7 +125,7 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 
 <img src="images/ai-13.png" alt="Completed Run a prompt step with green confirmation banner" width="700">
 
-### 3. Data Analyst reviews AI findings
+### 4. Data Analyst reviews AI findings
 
 1. Click the `+` button below `Run a prompt` on the canvas to add the approval step.
 
@@ -176,7 +159,7 @@ The `Run a prompt` step has been added to the canvas as the second step in the f
 
 <img src="images/approval-07.png" alt="Save button at the top right" width="700">
 
-### 4. Rule Based Cleaning
+### 5. Rule Based Cleaning
 
 The rule based cleaning is done using an Office Script in Excel, which applies `CLEAN` and `TRIM` to text values and removes duplicate rows. This script is created directly in Excel Online, then called from Power Automate using the `Run script` action, so the same cleaning happens automatically every time the flow runs.
 
@@ -282,7 +265,7 @@ function main(workbook: ExcelScript.Workbook) {
 
 <img src="images/rule-16.png" alt="Save button at the top right" width="700">
 
-### 5. Notify Data Analyst
+### 6. Notify Data Analyst
 
 Power Automate notifies the Data Analyst that the cleaned file is ready after the rule based cleaning has finished.
 
@@ -293,3 +276,12 @@ Power Automate notifies the Data Analyst that the cleaned file is ready after th
 2. In the search box, type `send an email` and press `Enter`. Look for `Send an email (V2)` under `Office 365 Outlook`, then select it.
 
 <img src="images/notify-02.png" alt="Send an email V2 under Office 365 Outlook" width="700">
+
+3. Select `Sign in` to connect to `Office 365 Outlook`.
+
+<img src="images/notify-03.png" alt="Sign in to Office 365 Outlook" width="700">
+
+4. Fill in the `To`, `Subject`, and `Body` fields, then select the `Save` button at the top.
+
+<img src="images/notify-04.png" alt="To, Subject and Body fields in Send an email V2" width="700">
+
