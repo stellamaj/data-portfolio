@@ -31,7 +31,7 @@ For the MongoDB setup and `characters` collection creation, see:
 
 The `starwars` database initially contains only the `characters` collection.
 
-<img src="images/mongodb-before-etl.png" alt="MongoDB Compass showing the starwars database with the characters collection" width="400">
+<img src="images/mongodb-before-etl.png" alt="MongoDB Compass showing the starwars database with the characters collection" width="700">
 
 ### Python Dependencies
 
@@ -71,7 +71,7 @@ The HTTP status code is checked to confirm that the API request was successful. 
 print(f"API response status code: {response.status_code}")
 ```
 
-<img src="images/swapi-status-code.png" alt="Python code and terminal output showing SWAPI response status code 200" width="400">
+<img src="images/swapi-status-code.png" alt="Python code and terminal output showing SWAPI response status code 200" width="700">
 
 The API response contains information about the available starships, including:
 
@@ -82,7 +82,7 @@ The API response contains information about the available starships, including:
 
 The response is converted into a Python dictionary using `response.json()`.
 
-<img src="images/swapi-response-dictionary.png" alt="SWAPI response dictionary printed in the Python terminal" width="400">
+<img src="images/swapi-response-dictionary.png" alt="SWAPI response dictionary printed in the Python terminal" width="700">
 
 The API response includes a `next` URL, showing that additional pages of starship data are available. The first API page contains 10 starship records in the `results` list.
 
@@ -90,7 +90,7 @@ The API response includes a `next` URL, showing that additional pages of starshi
 print(len(data["results"]))
 ```
 
-<img src="images/swapi-first-page-count.png" alt="Python terminal output showing 10 starships returned on the first SWAPI page" width="400">
+<img src="images/swapi-first-page-count.png" alt="Python terminal output showing 10 starships returned on the first SWAPI page" width="700">
 
 ### Retrieve All Starships
 
@@ -115,7 +115,7 @@ starships = get_all_starships()
 
 The function retrieves all 36 available starships.
 
-<img src="images/swapi-all-starships.png" alt="Python function retrieving all 36 starships from SWAPI" width="400">
+<img src="images/swapi-all-starships.png" alt="Python function retrieving all 36 starships from SWAPI" width="700">
 
 ### Test Pilot Lookup by SWAPI URL
 
@@ -129,7 +129,7 @@ print(pilot)
 
 The lookup returns `None`, confirming that the `characters` collection does not contain a matching pilot SWAPI `url` field.
 
-<img src="images/pilot-url-lookup-none.png" alt="MongoDB lookup by pilot URL returning None in the Python terminal" width="400">
+<img src="images/pilot-url-lookup-none.png" alt="MongoDB lookup by pilot URL returning None in the Python terminal" width="700">
 
 ### Test Pilot Lookup by Character Name
 
@@ -142,7 +142,7 @@ print(pilot)
 
 The lookup successfully returns the matching character document from MongoDB, including its `_id`.
 
-<img src="images/pilot-name-lookup.png" alt="MongoDB lookup returning the Chewbacca character document in the Python terminal" width="400">
+<img src="images/pilot-name-lookup.png" alt="MongoDB lookup returning the Chewbacca character document in the Python terminal" width="700">
 
 ### Convert Pilot URL to MongoDB ObjectId
 
@@ -162,7 +162,7 @@ def get_pilot_object_id(pilot_url):
 
 The test confirms that a pilot SWAPI URL can be converted to the matching MongoDB ObjectId.
 
-<img src="images/pilot-objectid-lookup.png" alt="Python terminal output showing a pilot SWAPI URL converted to a MongoDB ObjectId" width="400">
+<img src="images/pilot-objectid-lookup.png" alt="Python terminal output showing a pilot SWAPI URL converted to a MongoDB ObjectId" width="700">
 
 ### Replace Pilot URLs with MongoDB ObjectIds
 
@@ -185,7 +185,7 @@ starships = replace_pilot_urls(starships)
 
 The test confirms that the pilot URLs have been replaced with MongoDB ObjectIds.
 
-<img src="images/pilot-objectids-replaced.png" alt="Python terminal output showing pilot URLs replaced with MongoDB ObjectIds" width="400">
+<img src="images/pilot-objectids-replaced.png" alt="Python terminal output showing pilot URLs replaced with MongoDB ObjectIds" width="700">
 
 ### Load Starships into MongoDB
 
@@ -203,7 +203,7 @@ print(f"Starships inserted: {len(result.inserted_ids)}")
 
 The output confirms that all 36 transformed starship documents were inserted successfully.
 
-<img src="images/starships-inserted.png" alt="Python terminal output confirming 36 starship documents inserted into MongoDB" width="400">
+<img src="images/starships-inserted.png" alt="Python terminal output confirming 36 starship documents inserted into MongoDB" width="700">
 
 ## Final Result
 
@@ -214,11 +214,11 @@ The final database contains:
 - `characters` collection - 87 documents
 - `starships` collection - 36 documents
 
-<img src="images/mongodb-after-etl.png" alt="MongoDB Compass showing the starwars database with characters and starships collections" width="400">
+<img src="images/mongodb-after-etl.png" alt="MongoDB Compass showing the starwars database with characters and starships collections" width="700">
 
 The `starships` collection contains the transformed starship documents. Pilot URLs have been replaced with MongoDB ObjectIds where pilots are known.
 
 Some starships do not have pilots, so their `pilots` array is empty.
 
-<img src="images/starships-collection-documents.png" alt="MongoDB Compass showing documents in the starships collection including an empty pilots array" width="400">
+<img src="images/starships-collection-documents.png" alt="MongoDB Compass showing documents in the starships collection including an empty pilots array" width="700">
 
