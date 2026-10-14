@@ -6,6 +6,6 @@ This repository showcases my data analysis, data engineering and automation proj
 
 [Python Data Project](python-data-project/)
 
-[Python MongoDB Project](python-mongodb-project/)
+[Python MongoDB Star Wars ETL Pipelin](python-mongodb-starwars-etl-pipeline/)
 
-[AI-Powered Data Cleaning Workflow](ai-automated-workflow/)
+[Power Automate AI Excel Cleaning Workflow](power-automate-ai-excel-cleaning-workflow/)
